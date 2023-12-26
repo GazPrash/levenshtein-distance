@@ -6,7 +6,7 @@ $$
 \operatorname{lev}(a, b)= \begin{cases}|a| & \text { if }|b|=0, \\ |b| & \text { if }|a|=0, \\ \operatorname{lev}(\operatorname{tail}(a), \operatorname{tail}(b)) & \text { if } \operatorname{head}(a)=\operatorname{head}(b), \\ 1+\min \begin{cases}\operatorname{lev}(\operatorname{tail}(a), b) \\ \operatorname{lev}(a, \operatorname{tail}(b)) \\ \operatorname{lev}(\operatorname{tail}(a), \operatorname{tail}(b))\end{cases} & \text { otherwise }\end{cases}
 $$
 
-where the tail of some string $x$ is a string of all but the first character of $x$, and head $(x)$ is the first character of $x$. Either the notation
+where the tail of some string $x$ is a string of all but the first character of $x$, and head $(x)$ is the first character of $x$. Either the notation.
 
 Note that the first element in the minimum corresponds to deletion (from $a$ to $b$ ), the second to insertion and the third to replacement.
 This definition corresponds directly to the naive recursive implementation.
