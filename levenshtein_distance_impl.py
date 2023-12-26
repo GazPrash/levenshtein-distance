@@ -17,7 +17,7 @@ def levenshtein_impl(str1: str, str2: str, n1, n2, cache) -> int:
     if str1 == str2:
         cache[n1][n2] = 0
         return cache[n1][n2]
-    if str1[0] == str2[0]:
+    if str1[n1 - 1] == str2[n2 - 1]:
         cache[n1][n2] = levenshtein_impl(str1, str2, n1 - 1, n2 - 1, cache)
         return cache[n1][n2]
     cache[n1][n2] = 1 + min(
@@ -33,7 +33,8 @@ def main():
     s2 = "fasdkhhasdhjashdhadsaklsdja"
     s3 = "stash"
     s4 = "cache"
-    other_s = [s2, s3, s4]
+    s5 = "stage"
+    other_s = [s2, s3, s4, s5]
     for s in other_s:
         print(s1, s)
         print(levenshtein_func(s1, s))
